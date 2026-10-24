@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNSCRATCH — Osservatorio Indipendente sulle Lotterie Istantanee</title>
+  <meta name="description" content="Analisi matematica indipendente delle probabilità reali, ritorno al giocatore (RTP) e doppia erosione fiscale sui Gratta e Vinci italiani.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="disclaimer-bar">
+    <span><strong>NOTA DI TRASPARENZA:</strong> Osservatorio statistico indipendente. Non supportiamo il gioco d'azzardo. Dati verificati sui decreti ADM (69 lotterie attive).</span>
+    <span>Telefono Verde Nazionale Dipendenze: 800 558 822</span>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <svg class="brand-logo" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="scratchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#38bdf8" />
+              <stop offset="100%" stop-color="#2563eb" />
+            </linearGradient>
+            <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fbbf24" />
+              <stop offset="100%" stop-color="#d97706" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(2, 4)">
+            <path d="M4 6C4 3.79086 5.79086 2 8 2H34L10 38H8C5.79086 38 4 36.2091 4 34V6Z" fill="url(#goldFoil)" opacity="0.95"/>
+            <line x1="36" y1="0" x2="8" y2="40" stroke="var(--bg)" stroke-width="3.5"/>
+            <rect x="19" y="24" width="4.5" height="14" rx="1" fill="#f43f5e"/>
+            <rect x="26" y="17" width="4.5" height="21" rx="1" fill="#f59e0b"/>
+            <rect x="33" y="9" width="4.5" height="29" rx="1" fill="url(#scratchGrad)"/>
+          </g>
+          <text x="52" y="29" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing="0.06em" fill="currentColor">UNSCRATCH</text>
+          <text x="53" y="41" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" letter-spacing="0.16em" fill="#8b95a5">LOTTERY ODDS &amp; RTP AUDIT</text>
+        </svg>
+        <div class="brand-tagline">
+          Analisi matematica delle probabilità reali, ritorno al giocatore (RTP) e doppia erosione fiscale su tutti i 69 Gratta e Vinci italiani attivi.
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="search-input" type="search" placeholder="Cerca biglietto (es. Miliardario, 100X...)" style="padding:8px 12px; border-radius:6px; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); font-size:12.5px; min-width:210px;">
+        <select id="sort-select" aria-label="Ordina catalogo">
+          <option value="rtp_desc">Ordina: RTP migliore</option>
+          <option value="gain_desc">Ordina: Prob. Guadagno Reale</option>
+          <option value="price_asc">Ordina: Prezzo crescente</option>
+          <option value="price_desc">Ordina: Prezzo decrescente</option>
+        </select>
+        <button id="tax-toggle" class="active">Calcolo: Netto (Tassa 20% inclusa)</button>
+        <button id="theme-toggle">Tema: Scuro</button>
+      </div>
+    </header>
+
+    <div class="kpi-grid">
+      <div class="card card-accent-top">
+        <div class="kpi-label">Ritorno Matematico (RTP)</div>
+        <div class="kpi-value" id="kpi-rtp" style="color:var(--accent)">—</div>
+        <div class="kpi-sub" id="kpi-rtp-sub">—</div>
+      </div>
+      <div class="card card-accent-top" style="border-top-color:var(--loss)">
+        <div class="kpi-label">Perdita Media per Biglietto</div>
+        <div class="kpi-value" id="kpi-ev" style="color:var(--loss)">—</div>
+        <div class="kpi-sub" id="kpi-ev-sub">—</div>
+      </div>
+      <div class="card card-accent-top" style="border-top-color:var(--gain)">
+        <div class="kpi-label">Probabilità Guadagno Reale</div>
+        <div class="kpi-value" id="kpi-gain" style="color:var(--gain)">—</div>
+        <div class="kpi-sub" id="kpi-gain-sub">—</div>
+      </div>
+      <div class="card card-accent-top" style="border-top-color:var(--even)">
+        <div class="kpi-label">Probabilità Pareggio (Omessa da ADM)</div>
+        <div class="kpi-value" id="kpi-even" style="color:var(--even)">—</div>
+        <div class="kpi-sub" id="kpi-even-sub">—</div>
+      </div>
+    </div>
+
+    <div class="main-layout">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:6px;">
+          <div class="kpi-label" style="margin-bottom:0" id="catalog-count-label">Catalogo Completo (69 Biglietti)</div>
+          <span id="catalog-filter-hint" style="font-size:11px; color:var(--muted)">Clicca un taglio o un biglietto per filtrare (riclicca per mostrare tutti)</span>
+        </div>
+        <div class="price-pills" id="price-pills"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Biglietto &amp; Taglio</th>
+                <th class="num">Vincita (&gt;Costo)</th>
+                <th class="num">Pareggio (=Costo)</th>
+                <th class="num">RTP</th>
+                <th class="num">Perdita Media</th>
+              </tr>
+            </thead>
+            <tbody id="catalog-body"></tbody>
+          </table>
+        </div>
+
+        <div class="tax-note-box" id="tax-erosion-box"></div>
+
+        <div class="sim-box">
+          <div class="kpi-label">Simulatore Monte Carlo &amp; Curva del Portafoglio</div>
+          <div class="sim-buttons">
+            <button class="sim-btn" data-n="10">10 biglietti</button>
+            <button class="sim-btn" data-n="100">100 biglietti</button>
+            <button class="sim-btn" data-n="1000">1.000 biglietti</button>
+            <button class="sim-btn" data-n="10000">10.000 biglietti</button>
+          </div>
+          <div id="sim-result" style="font-family:var(--font-mono); font-size:12.5px; margin-bottom:10px;"></div>
+          <svg id="sim-chart" viewBox="0 0 520 110" style="width:100%; height:110px; background:var(--bg-subtle); border:1px solid var(--border); border-radius:6px;"></svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap;">
+          <h2 id="det-title" style="font-size:19px; font-weight:700;">—</h2>
+          <a id="det-source-link" href="#" target="_blank" rel="noopener" style="font-size:12px; color:var(--accent); font-family:var(--font-mono); text-decoration:none;">Fonte Ufficiale ADM &nearr;</a>
+        </div>
+        <div id="det-lotto" style="font-size:12px; color:var(--muted); font-family:var(--font-mono); margin-top:2px;">—</div>
+
+        <div class="split-bar" id="split-bar"></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--loss)"></i>Perdita secca (0 €)</span>
+          <span><i class="dot" style="background:var(--even)"></i>Pareggio (Premio = Prezzo)</span>
+          <span><i class="dot" style="background:var(--gain)"></i>Guadagno netto (&gt; Prezzo)</span>
+        </div>
+
+        <div class="kpi-label" style="margin-bottom:8px" id="tier-verdict-title">Analisi del Taglio: Quali biglietti hanno le metriche migliori</div>
+        <div class="verdict-grid" id="tier-verdict-box"></div>
+
+        <div class="kpi-label" style="margin-bottom:8px">Distribuzione Completa Fasce di Premio</div>
+        <div class="table-wrap" style="margin-bottom:22px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Premio Lordo</th>
+                <th class="num">Incasso Netto</th>
+                <th class="num">Biglietti nel Lotto</th>
+                <th class="num">Probabilità</th>
+              </tr>
+            </thead>
+            <tbody id="tiers-body"></tbody>
+          </table>
+        </div>
+
+        <div class="kpi-label" style="margin-bottom:10px">Analisi Strutturale: RTP Medio per Taglio di Prezzo (0,50 € – 25 €)</div>
+        <div id="price-tier-chart" style="margin-bottom:22px;"></div>
+
+        <div class="kpi-label" style="margin-bottom:8px">Ultime Grandi Vincite Riscosse e Certificate</div>
+        <div id="recent-wins-list" style="font-size:12.5px; color:var(--muted);"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

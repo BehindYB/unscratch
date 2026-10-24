@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none">
+  <defs>
+    <linearGradient id="scratchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <!-- Icona: Biglietto tagliato in diagonale che rivela un grafico statistico -->
+  <g transform="translate(2, 4)">
+    <!-- Parte superiore sinistra: "patina" dorata prima di grattare -->
+    <path d="M4 6C4 3.79086 5.79086 2 8 2H34L10 38H8C5.79086 38 4 36.2091 4 34V6Z" fill="url(#goldFoil)" opacity="0.9"/>
+    <!-- Linea di taglio diagonale ("Unscratch") -->
+    <line x1="36" y1="0" x2="8" y2="40" stroke="#090a0f" stroke-width="3.5"/>
+    <!-- Parte inferiore destra: dati reali / istogramma scoperto sotto la patina -->
+    <rect x="19" y="24" width="4.5" height="14" rx="1" fill="#ef4444"/>
+    <rect x="26" y="17" width="4.5" height="21" rx="1" fill="#f59e0b"/>
+    <rect x="33" y="9" width="4.5" height="29" rx="1" fill="url(#scratchGrad)"/>
+  </g>
+  <!-- Wordmark tipografico -->
+  <text x="52" y="29" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="0.06em" fill="currentColor">UNSCRATCH</text>
+  <text x="53" y="41" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" letter-spacing="0.16em" fill="#64748b">LOTTERY ODDS &amp; RTP AUDIT</text>
+</svg>
