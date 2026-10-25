@@ -7,6 +7,14 @@
   let sortMode = "rtp_desc";
   let showNetTax = true;
 
+  function track(eventName, eventData) {
+    if (window.umami && typeof window.umami.track === "function") {
+      try {
+        window.umami.track(eventName, eventData);
+      } catch (_) {}
+    }
+  }
+
   const fmtEur = (n) =>
     new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(n);
   const fmtInt = (n) => new Intl.NumberFormat("it-IT").format(n);
@@ -54,6 +62,7 @@
           filterPrice = "all";
         } else {
           filterPrice = p;
+          track("filter_price", { price: Number(p) });
           const currentTicket = data.find((x) => x.id === selectedId);
           if (!currentTicket || currentTicket.price !== Number(p)) {
             const filteredForPrice = getFilteredAndSorted();
@@ -123,6 +132,7 @@
         } else {
           selectedId = clickedId;
           filterPrice = String(clickedTicket.price);
+          track("select_ticket", { ticket: clickedTicket.name, price: clickedTicket.price });
         }
         renderAll();
       });
@@ -452,7 +462,12 @@
       e.target.textContent = nextTheme === "dark" ? "Tema: Scuro" : "Tema: Chiaro";
     });
     document.querySelectorAll(".sim-btn").forEach((btn) => {
-      btn.addEventListener("click", () => runSimulation(Number(btn.getAttribute("data-n"))));
+      btn.addEventListener("click", () => {
+        const n = Number(btn.getAttribute("data-n"));
+        const t = data.find((x) => x.id === selectedId);
+        track("simulate_tickets", { count: n, ticket: t ? t.name : "" });
+        runSimulation(n);
+      });
     });
     renderAll();
   });
