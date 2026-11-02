@@ -3303,6 +3303,111 @@ window.UNSCRATCH_DATA = [
     ]
   },
   {
+    "id": "giochi-di-natale",
+    "name": "Giochi di Natale",
+    "price": 5.0,
+    "url": "https://www.adm.gov.it/portale/web/guest/-/giochi-di-natale",
+    "source": "ADM",
+    "lotto": 30240000,
+    "max_prize": 500000.0,
+    "max_prize_net": 400100.0,
+    "max_prize_one_in": 10080000.0,
+    "rtp_gross": 71.19,
+    "rtp_net": 70.97,
+    "ev_gross": 3.56,
+    "ev_net": 3.55,
+    "expected_loss_net": 1.45,
+    "prob_any_one_in": 3.23,
+    "prob_gain_one_in": 6.45,
+    "prob_even_one_in": 6.45,
+    "pct_loss": 69.01,
+    "pct_even": 15.5,
+    "pct_gain": 15.49,
+    "tiers": [
+      {
+        "prize": 500000.0,
+        "net_prize": 400100.0,
+        "tax": 99900.0,
+        "winners": 3,
+        "one_in": 10080000.0,
+        "pct": 1e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 10000.0,
+        "net_prize": 8100.0,
+        "tax": 1900.0,
+        "winners": 12,
+        "one_in": 2520000.0,
+        "pct": 4e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 1000.0,
+        "net_prize": 900.0,
+        "tax": 100.0,
+        "winners": 180,
+        "one_in": 168000.0,
+        "pct": 0.000595,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 500.0,
+        "net_prize": 500.0,
+        "tax": 0.0,
+        "winners": 1260,
+        "one_in": 24000.0,
+        "pct": 0.004167,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 100.0,
+        "net_prize": 100.0,
+        "tax": 0.0,
+        "winners": 46620,
+        "one_in": 648.65,
+        "pct": 0.154167,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 50.0,
+        "net_prize": 50.0,
+        "tax": 0.0,
+        "winners": 554400,
+        "one_in": 54.55,
+        "pct": 1.833333,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 20.0,
+        "net_prize": 20.0,
+        "tax": 0.0,
+        "winners": 856800,
+        "one_in": 35.29,
+        "pct": 2.833333,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 10.0,
+        "net_prize": 10.0,
+        "tax": 0.0,
+        "winners": 3225600,
+        "one_in": 9.38,
+        "pct": 10.666667,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 5.0,
+        "net_prize": 5.0,
+        "tax": 0.0,
+        "winners": 4687200,
+        "one_in": 6.45,
+        "pct": 15.5,
+        "excluded_by_law": true
+      }
+    ]
+  },
+  {
     "id": "nuovo-20x",
     "name": "Nuovo 20X",
     "price": 5.0,
@@ -6867,6 +6972,138 @@ window.UNSCRATCH_DATA = [
     ]
   },
   {
+    "id": "giochi-di-natale-super",
+    "name": "Giochi di Natale Super",
+    "price": 10.0,
+    "url": "https://www.adm.gov.it/portale/web/guest/-/giochi-di-natale-super",
+    "source": "ADM",
+    "lotto": 10560000,
+    "max_prize": 2000000.0,
+    "max_prize_net": 1600100.0,
+    "max_prize_one_in": 5280000.0,
+    "rtp_gross": 74.81,
+    "rtp_net": 73.84,
+    "ev_gross": 7.48,
+    "ev_net": 7.38,
+    "expected_loss_net": 2.62,
+    "prob_any_one_in": 2.99,
+    "prob_gain_one_in": 5.34,
+    "prob_even_one_in": 6.82,
+    "pct_loss": 66.61,
+    "pct_even": 14.67,
+    "pct_gain": 18.73,
+    "tiers": [
+      {
+        "prize": 2000000.0,
+        "net_prize": 1600100.0,
+        "tax": 399900.0,
+        "winners": 2,
+        "one_in": 5280000.0,
+        "pct": 1.9e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 100000.0,
+        "net_prize": 80100.0,
+        "tax": 19900.0,
+        "winners": 4,
+        "one_in": 2640000.0,
+        "pct": 3.8e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 50000.0,
+        "net_prize": 40100.0,
+        "tax": 9900.0,
+        "winners": 10,
+        "one_in": 1056000.0,
+        "pct": 9.5e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 10000.0,
+        "net_prize": 8100.0,
+        "tax": 1900.0,
+        "winners": 12,
+        "one_in": 880000.0,
+        "pct": 0.000114,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 5000.0,
+        "net_prize": 4100.0,
+        "tax": 900.0,
+        "winners": 14,
+        "one_in": 754285.71,
+        "pct": 0.000133,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 1000.0,
+        "net_prize": 900.0,
+        "tax": 100.0,
+        "winners": 30,
+        "one_in": 352000.0,
+        "pct": 0.000284,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 500.0,
+        "net_prize": 500.0,
+        "tax": 0.0,
+        "winners": 6248,
+        "one_in": 1690.14,
+        "pct": 0.059167,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 100.0,
+        "net_prize": 100.0,
+        "tax": 0.0,
+        "winners": 140800,
+        "one_in": 75.0,
+        "pct": 1.333333,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 50.0,
+        "net_prize": 50.0,
+        "tax": 0.0,
+        "winners": 281600,
+        "one_in": 37.5,
+        "pct": 2.666667,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 20.0,
+        "net_prize": 20.0,
+        "tax": 0.0,
+        "winners": 774400,
+        "one_in": 13.64,
+        "pct": 7.333333,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 15.0,
+        "net_prize": 15.0,
+        "tax": 0.0,
+        "winners": 774400,
+        "one_in": 13.64,
+        "pct": 7.333333,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 10.0,
+        "net_prize": 10.0,
+        "tax": 0.0,
+        "winners": 1548800,
+        "one_in": 6.82,
+        "pct": 14.666667,
+        "excluded_by_law": true
+      }
+    ]
+  },
+  {
     "id": "bonus-tutto-per-tutto",
     "name": "Bonus Tutto per Tutto",
     "price": 10.0,
@@ -8463,6 +8700,129 @@ window.UNSCRATCH_DATA = [
     ]
   },
   {
+    "id": "giochi-di-natale-extra",
+    "name": "Giochi di Natale Extra",
+    "price": 20.0,
+    "url": "https://www.adm.gov.it/portale/web/guest/-/giochi-di-natale-extra",
+    "source": "ADM",
+    "lotto": 7200000,
+    "max_prize": 5000000.0,
+    "max_prize_net": 4000100.0,
+    "max_prize_one_in": 3600000.0,
+    "rtp_gross": 78.04,
+    "rtp_net": 76.48,
+    "ev_gross": 15.61,
+    "ev_net": 15.3,
+    "expected_loss_net": 4.7,
+    "prob_any_one_in": 2.88,
+    "prob_gain_one_in": 6.34,
+    "prob_even_one_in": 5.26,
+    "pct_loss": 65.22,
+    "pct_even": 19.0,
+    "pct_gain": 15.78,
+    "tiers": [
+      {
+        "prize": 5000000.0,
+        "net_prize": 4000100.0,
+        "tax": 999900.0,
+        "winners": 2,
+        "one_in": 3600000.0,
+        "pct": 2.8e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 100000.0,
+        "net_prize": 80100.0,
+        "tax": 19900.0,
+        "winners": 4,
+        "one_in": 1800000.0,
+        "pct": 5.6e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 50000.0,
+        "net_prize": 40100.0,
+        "tax": 9900.0,
+        "winners": 4,
+        "one_in": 1800000.0,
+        "pct": 5.6e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 10000.0,
+        "net_prize": 8100.0,
+        "tax": 1900.0,
+        "winners": 6,
+        "one_in": 1200000.0,
+        "pct": 8.3e-05,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 1000.0,
+        "net_prize": 900.0,
+        "tax": 100.0,
+        "winners": 1200,
+        "one_in": 6000.0,
+        "pct": 0.016667,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 500.0,
+        "net_prize": 500.0,
+        "tax": 0.0,
+        "winners": 21750,
+        "one_in": 331.03,
+        "pct": 0.302083,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 200.0,
+        "net_prize": 200.0,
+        "tax": 0.0,
+        "winners": 57000,
+        "one_in": 126.32,
+        "pct": 0.791667,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 100.0,
+        "net_prize": 100.0,
+        "tax": 0.0,
+        "winners": 192000,
+        "one_in": 37.5,
+        "pct": 2.666667,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 50.0,
+        "net_prize": 50.0,
+        "tax": 0.0,
+        "winners": 288000,
+        "one_in": 25.0,
+        "pct": 4.0,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 30.0,
+        "net_prize": 30.0,
+        "tax": 0.0,
+        "winners": 576000,
+        "one_in": 12.5,
+        "pct": 8.0,
+        "excluded_by_law": false
+      },
+      {
+        "prize": 20.0,
+        "net_prize": 20.0,
+        "tax": 0.0,
+        "winners": 1368000,
+        "one_in": 5.26,
+        "pct": 19.0,
+        "excluded_by_law": true
+      }
+    ]
+  },
+  {
     "id": "super-gold",
     "name": "Super Gold",
     "price": 25.0,
@@ -8985,21 +9345,5 @@ window.UNSCRATCH_WINS = [
   {
     "slug": "2Milioni Di Euro A Taranto Con Maxi Miliardario New",
     "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-2milioni-di-euro-a-taranto-con-maxi-miliardario-new"
-  },
-  {
-    "slug": "500Mila Euro A Avezzano Con Miliardario New",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-avezzano-con-miliardario-new"
-  },
-  {
-    "slug": "500Mila Euro A Gattatico Con Ultra Numerissimi",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-gattatico-con-ultra-numerissimi"
-  },
-  {
-    "slug": "500Mila Euro A Lanuvio Con Numerissimi",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-lanuvio-con-numerissimi"
-  },
-  {
-    "slug": "5Milioni Di Euro A Noventa Padovana Con Maxi Miliardario New",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-5milioni-di-euro-a-noventa-padovana-con-maxi-miliardario-new"
   }
 ];
