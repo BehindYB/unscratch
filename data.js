@@ -9343,10 +9343,6 @@ window.UNSCRATCH_WINS = [
     "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-2milioni-di-euro-a-montemarciano-con-giochi-di-natale-super"
   },
   {
-    "slug": "2Milioni Di Euro A Monza Con Super Numerissimi",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-2milioni-di-euro-a-monza-con-super-numerissimi"
-  },
-  {
     "slug": "2Milioni Di Euro A Ventimiglia Con New Bonus Tutto Per Tutto",
     "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-2milioni-di-euro-a-ventimiglia-con-new-bonus-tutto-per-tutto"
   },
@@ -9359,8 +9355,8 @@ window.UNSCRATCH_WINS = [
     "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-corato-con-new-tutto-per-tutto"
   },
   {
-    "slug": "500Mila Euro A Fiorano Modenese Con Doppia Sfida Classic",
-    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-fiorano-modenese-con-doppia-sfida-classic"
+    "slug": "500Mila Euro A Racale Con 20X New",
+    "url": "https://www.grattaevinci.com/news/vincita-gratta-e-vinci-500mila-euro-a-racale-con-20X-NEW"
   },
   {
     "slug": "500Mila Euro A San Mauro Torinese Con Miliardario New",
